@@ -1,0 +1,51 @@
+﻿<Window x:Class="WpfAppAcademia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="Gray"
+        TextElement.FontWeight="Regular"
+        xmlns:local="clr-namespace:WpfAppAcademia"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="250" MinWidth="500" MaxHeight="400" MaxWidth="800" Height="400" Width="800" > 
+    <Window.Resources>
+        <LinearGradientBrush x:Key="PageBackground" StartPoint="0,0" EndPoint="0,1" >
+            <GradientStop Color="#273046" Offset="0"/>
+            <GradientStop Color="#131b28" Offset="1"/>
+        </LinearGradientBrush>
+
+    </Window.Resources>
+    
+   
+        <Grid   HorizontalAlignment="Center" >
+            <Grid>
+                <Grid.Background>
+                    <StaticResource ResourceKey="PageBackground"/>
+                </Grid.Background>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                    <ColumnDefinition Width="400"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+            <DataGrid x:Name="DataTable" Grid.Row="2" Margin="10,0,10,50" CanUserAddRows="False" Height="220" ItemsSource="{Binding}" SelectionMode="Single" />
+            <Button Grid.Row="1" Grid.Column="0" Content="Здания"  Width="120"  HorizontalAlignment="Left" Margin="46,10,10,10"  Height="auto" Click="ButtonDepartments_Click"/>
+            <Button  Grid.Row="0" Grid.Column="0" Content="Факультеты" Margin="46,10,10,10" Width="120" HorizontalAlignment="Left"   Height="auto" Click="ButtonFaculties_Click"/>
+            <Button  Grid.Row="1" Grid.Column="0" Content="Группа" Margin="80,10,10,10" Width="120"   Height="auto" Click="ButtonGroups_Click"/>
+            <Button  Grid.Row="0" Grid.Column="0" Content="Учителя" Margin="80,10,10,10" Width="120"   Height="auto" Click="ButtonTeachers_Click"/>
+            <Label FontSize="12" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,100" Height="25" Grid.Row="2" Foreground="RoyalBlue" Content="Добавление записей в таблицы"/>
+            <Button x:Name="building" Grid.Row="2" Grid.Column="1" Content="Здания"  Width="120"  HorizontalAlignment="Right" Margin="0,110,30,0"  Height="30" Click="DepartmentButton_Click"/>
+            <Button x:Name="faculties" Grid.Row="2" Grid.Column="1" Content="Факультеты" Margin="0,0,30,-10" Width="120" HorizontalAlignment="Right"   Height="30" Click="FacultiesButton_Click"/>
+            <Button x:Name="group" Grid.Row="2" Grid.Column="1" Content="Группа" Margin="20,20,10,10" Width="120"  HorizontalAlignment="Left" Height="30"  Click="GroupButton_Click"/>
+            <Button x:Name="teacher" Grid.Row="2" Grid.Column="1" Content="Учителя" Margin="20,120,00,10" Width="120"   Height="30" HorizontalAlignment="Left" Cursor="Hand" Click="TeacherButton_Click"/>
+            <Button Content="Сохранить" Grid.Row="3" VerticalAlignment="Bottom"  Margin="0,0,0,10" Width="100" Click="SaveButton_Click" />
+            <Button Content="Удалить" Grid.Row="3" VerticalAlignment="Bottom" Margin="0,0,220,10" Width="100" Click="DeleteButton_Click" Cursor="Hand" />
+        </Grid>
+        </Grid>
+
+</Window>

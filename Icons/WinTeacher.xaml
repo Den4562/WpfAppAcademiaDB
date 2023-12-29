@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfAppAcademia.Icons.WinTeacher"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppAcademia.Icons"
+        mc:Ignorable="d"
+        Title="WinTeacher" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="20">
+            <Label Content="Дата приема на работу" />
+            <DatePicker x:Name="EmploymentDatePicker" Margin="0,0,0,10"/>
+
+            <Label Content="Имя" />
+            <TextBox x:Name="NameTextBox" Margin="0,0,0,10"/>
+
+            <Label Content="Премия" />
+            <TextBox x:Name="PremiumTextBox" Margin="0,0,0,10"/>
+
+            <Label Content="Зарплата" />
+            <TextBox x:Name="SalaryTextBox" Margin="0,0,0,10"/>
+
+            <Label Content="Фамилия" />
+            <TextBox x:Name="SurnameTextBox" Margin="0,0,0,10"/>
+
+            <Button Margin="10" Content="Добавить" Width="100" HorizontalAlignment="Left" Click="AddTeacher_Click" />
+            <Button Margin="120,-50,0,0" Content="Вернутся" Width="100" HorizontalAlignment="Left" Click="MainWin_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
